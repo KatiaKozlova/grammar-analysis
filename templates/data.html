@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+    .tg td{border-style:solid;border-width:1px;font-family:"Times New Roman", Times, serif;font-size:14px;
+      overflow:hidden;padding:0px 5px;word-break:normal;}
+    .tg th{border-style:solid;border-width:1px;font-family:"Times New Roman", Times, serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:0px 5px;word-break:normal;}
+    .tg .tg-0lax{text-align:left;vertical-align:center;}
+
+/* Style The Dropdown Button */
+    .dropbtn {
+      width: 500px;
+      border-style:solid;
+      border-color: #ECEEFE;
+      background-color: #F6F7FF;
+      padding: 16px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      width: 500px;
+      color: white;
+      border-color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      width: 500px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+/* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+/* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #f1f1f1}
+    
+/* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+      background-color: #F6F7FF;
+    }
+</style>
+
+<section id="hero" class="align-items-center">
+<div class="dropdown">
+  <button class="dropbtn"><h2>Content:</h2></button>
+  <div class="dropdown-content">
+    <a href="#table1">Table of Glosses</a>
+    <a href="#table2">Table of Examples</a>
+    <a href="#downloader">Download</a>
+  </div>
+</div>
+<div class="container position-relative">
+      <div><h2><a name="table1">Table of Glosses:</a></h2></div>
+    <br>
+      <div class="text-center">{{ table1 | safe }}</div>
+    <br>
+      <div><h2><a name="table2">Table of Examples:</a></h2></div>
+    <br>
+      <div class="text-center">{{ table2 | safe }}</div>
+</div>
+<form class="container" action="/download">
+<div class="row">
+      <div class="col-md-4"><h2><a name="downloader">Download:</a></h2></div>
+      <select name="vars" class="col-md-4">
+          <option value="{{ name + '_glosses.csv' }}">Table of Glosses</option>
+          <option value="{{ name + '_examples.csv' }}">Table of Examples</option>
+          <option value="{{ name + '.jpeg' }}">All the Tables from the Grammar</option>
+          <option value="{{ name }}">Whole Information</option>
+      </select>
+</div>
+<div style="margin-top: 30px;">
+      <div class="file-submit">
+          <input type="submit" id="file-submit" class="file">
+      </div>
+</div>
+</form>
+
+{% endblock %}

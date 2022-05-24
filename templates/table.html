@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+    .tg td{border-style:solid;border-width:1px;font-family:"Times New Roman", Times, serif;font-size:14px;
+      overflow:hidden;padding:0px 5px;word-break:normal;}
+    .tg th{border-style:solid;border-width:1px;font-family:"Times New Roman", Times, serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:0px 5px;word-break:normal;}
+    .tg .tg-0lax{text-align:left;vertical-align:center;}
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+
+/* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+</style>
+        
+<section id="hero" class="align-items-center">
+<div class="container position-relative">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h2>Example:</h2>
+        </div>
+      </div>
+<div class="row justify-content-center">
+  <div class="column">
+      <p>p. {{ page }} tab. ({{ tab }}): {{ '.'.join(' '.join(image.split('%20')[1:]).strip().split('.')[:-1]) }}</p>
+      <br>
+      <img src="static/{{ image }}" width=350px align=center>
+    </div>
+  <div class="column">{{ table1 | safe }}</div>
+</div>
+<br>
+<a href="/results?filename={{ filename }}">Go back to results!</a>
+</div>
+
+{% endblock %}
