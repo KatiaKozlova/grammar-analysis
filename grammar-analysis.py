@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
 
 
 # !pip install pdfplumber
 # !pip install gdown
 
 
-# In[135]:
 
 
 import pdfplumber
@@ -28,13 +26,11 @@ from flask import render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
 
-# In[136]:
 
 
 d_en = enchant.Dict('en')
 
 
-# In[137]:
 
 
 def extract_tables(pg, nmng, pth, p_num):  # function for table extraction
@@ -64,7 +60,6 @@ def extract_tables(pg, nmng, pth, p_num):  # function for table extraction
                     break
 
 
-# In[161]:
 
 
 def extract_examples_tables(name): 
@@ -169,7 +164,6 @@ def extract_examples_tables(name):
         json.dump(examples_dic, fp, ensure_ascii=False)
 
 
-# In[139]:
 
 
 def prettify(text):  # function to clear lines from punctuation
@@ -190,7 +184,6 @@ def prettify(text):  # function to clear lines from punctuation
     return w, w_new
 
 
-# In[140]:
 
 
 def glossing(name):  # cutting into morphemes
@@ -256,7 +249,6 @@ def glossing(name):  # cutting into morphemes
         json.dump(list_of_glosses, f, ensure_ascii=False)
 
 
-# In[141]:
 
 
 def web_glosses():  # function to upload glosses with keywords from Wiki
@@ -311,7 +303,6 @@ def web_glosses():  # function to upload glosses with keywords from Wiki
     return web_dic_glosses
 
 
-# In[165]:
 
 
 def table_glossing(name):  # searching morphemes in tables
@@ -566,7 +557,6 @@ def table_glossing(name):  # searching morphemes in tables
         json.dump(dic, f, ensure_ascii=False)
 
 
-# In[143]:
 
 
 def beautify_glosses(name):  # glosses to table
@@ -616,7 +606,6 @@ def beautify_glosses(name):  # glosses to table
     return df
 
 
-# In[144]:
 
 
 def beautify_examples(name):  # examples to table
@@ -680,7 +669,6 @@ def beautify_examples(name):  # examples to table
     return df
 
 
-# In[156]:
 
 
 sheet_id = '1Hjfru6VSZWIyt2Gg6ZRRtvAeQrgmOM2GAi8LMT6whs0'  # Goofle Sheets with 1000 checked grammars
@@ -690,15 +678,13 @@ grammars = pd.read_csv(url)  # upload table
 grams = grammars[(grammars['да/нет'] == 'да')].sort_values(by='про какой язык')  # searchable ones
 
 
-# In[166]:
 
 
-UPLOAD_FOLDER = os.getcwd()  # folder to upload
+UPLOAD_FOLDER = os.getcwd()  # folder to upload (may be changed)
 app = Flask(__name__, static_url_path='/static')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-# In[167]:
 
 
 @app.route('/')  # starting page
@@ -815,7 +801,6 @@ def showTable():
     return render_template('table.html', image = image, table1 = table1, filename = filename, page = page, tab = tab)
 
 
-# In[ ]:
 
 
 if __name__ == '__main__':
