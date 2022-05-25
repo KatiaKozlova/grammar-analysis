@@ -8,17 +8,16 @@ Unfortunately, the provided website do not have a permanent link yet, so now it 
 [^1]: such as morphological tables and glossed examples 
 
 ## Installation
-1. There are two files in repository: [`.py`](/grammar-analysis.py) is created for Jupiter Notebook and [`.ipynb`](/grammar_analysis.ipynb) is set up for Google Colab.
-2. In Jupyter Notebook these libraries: __pdfplumber__, __gdown__, - are required. If not installed, run:
-``` python
-!pip install pdfplumber
-!pip install gdown
+1. There are two files in repository: [`_jupyter.ipynb`](/grammar-analysis_jupyter.ipynb) is created for Jupiter Notebook and [`_colab.ipynb`](/grammar-analysis_colab.ipynb) is set up for Google Colab.
+2. In Jupyter Notebook required libraries are mentioned in [`/requirements.txt`](/requirements.txt). Try running:
+```python
+!pip install -r requirements.txt
 ```
 3. In Google Colab code includes cells that upload required packages. <br>
-However, after installation there is one difficulty in Colab. You will have to find `/etc/ImageMagick-6/policy.xml` file and change one string there: `<policy domain="coder" rights="none" pattern="PDF"/>` → `<policy domain="coder" rights="read|write" pattern="PDF"/>`.<br>
-Or you can delete `/etc/ImageMagick-6/policy.xml` file and upload [this one](/policy.xml) at it's place.<br>
-Do not forget to *Restart runtime* after this procedure.
-4. Create folder `/static` in the same directory. 
+Do not forget to *Restart runtime* after:
+```python
+os.replace('policy.xml', '/etc/ImageMagick-6/policy.xml')
+``` 
 
 ## Data
 ### Input
