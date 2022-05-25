@@ -54,7 +54,8 @@ At the botton of the `/results` page of the site you can find a drop-down with o
 
 ![downloading](/static/site_3.png)
 <br>
-Choose one option, press `Submit` button and selected files will be downloaded to your computer. 
+Choose one option and press `Submit` button.<br>
+Selected files will be downloaded to your computer. 
 
 
 ### Requirements:
