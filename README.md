@@ -14,7 +14,10 @@ Unfortunately, the provided website do not have a permanent link yet, so now it 
 !pip install pdfplumber
 !pip install gdown
 ```
-3. In Google Colab code includes cells that upload required packages.
+3. In Google Colab code includes cells that upload required packages. <br>
+However, after installation there is one difficulty in Colab. You will have to find `/etc/ImageMagick-6/policy.xml` file and change one string there: `<policy domain="coder" rights="none" pattern="PDF"/>` → `<policy domain="coder" rights="read|write" pattern="PDF"/>`.<br>
+Or you can delete `/etc/ImageMagick-6/policy.xml` file and upload [this one](/policy.xml) at it's place.<br>
+Do not forget to *Restart runtime* after this procedure.
 4. Create folder `/static` in the same directory. 
 
 ## Data
