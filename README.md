@@ -8,7 +8,7 @@ Unfortunately, the provided website do not have a permanent link yet, so now it 
 [^1]: such as morphological tables and glossed examples 
 
 ## Installation
-1. There are two files in repository: [`.py`](/grammar_analysis.py) is created for Jupiter Notebook and [`.ipynb`](/grammar_analysis.ipynd) is set up for Google Colab.
+1. There are two files in repository: [`.py`](/grammar-analysis.py) is created for Jupiter Notebook and [`.ipynb`](/grammar_analysis.ipynd) is set up for Google Colab.
 2. In Jupiter Notebook these libraries: __pdfplumber__, __gdown__, - are required. If not installed, run:
 ``` python
 !pip install pdfplumber
