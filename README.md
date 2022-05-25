@@ -9,7 +9,7 @@ Unfortunately, the provided website do not have a permanent link yet, so now it 
 
 ## Installation
 1. There are two files in repository: [`.py`](/grammar-analysis.py) is created for Jupiter Notebook and [`.ipynb`](/grammar_analysis.ipynb) is set up for Google Colab.
-2. In Jupiter Notebook these libraries: __pdfplumber__, __gdown__, - are required. If not installed, run:
+2. In Jupyter Notebook these libraries: __pdfplumber__, __gdown__, - are required. If not installed, run:
 ``` python
 !pip install pdfplumber
 !pip install gdown
@@ -64,7 +64,7 @@ Selected files will be downloaded to your computer.
 ### Requirements:
 #### *Grammars*
 :white_check_mark: machine-readable PDF</br>
-:question: scanned and digitized)
+:question: scanned and digitized
 #### *Glosses*
 :white_check_mark: explicit numeration</br>
 :white_check_mark: IMG[^2] and LGR[^3] usage</br>
